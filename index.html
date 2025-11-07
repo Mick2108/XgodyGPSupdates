@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn how to update your Xgody GPS maps with our step-by-step guide. Keep your navigation system current for the best driving experience.">
-    <meta name="keywords" content="Xgody GPS update, Xgody navigation, map update, Xgody GPS, GPS maps, NaviSolve">
-    <meta name="author" content="Xgody GPS Support">
+    <meta name="description" content="Complete guide on how to update your Xgody GPS maps. Learn step-by-step instructions, troubleshooting tips, and benefits of keeping your navigation system current.">
+    <meta name="keywords" content="Xgody GPS update, GPS navigation, map update, Xgody GPS troubleshooting, car GPS">
+    <meta name="author" content="Xgody GPS Support Team">
     <title>How to update an Xgody GPS map to an Xgody GPS Update?</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -14,13 +14,25 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a5276;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
 
         body {
-            line-height: 1.6;
+            background-color: #f9f9f9;
             color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
@@ -33,15 +45,13 @@
 
         /* Header Styles */
         header {
-            background: rgba(30, 60, 114, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: var(--primary);
             color: white;
             padding: 1rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow);
         }
 
         .header-content {
@@ -51,557 +61,370 @@
         }
 
         .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 12px;
+        }
+
+        .logo span {
+            color: var(--secondary);
         }
 
         .logo i {
-            font-size: 2.2rem;
-            color: #4CAF50;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+            margin-right: 10px;
+            font-size: 2rem;
         }
 
-        .logo h1 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #fff, #e6f7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-menu {
+        nav ul {
             display: flex;
             list-style: none;
-            gap: 1.8rem;
         }
 
-        .nav-menu li a {
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.6rem 1.2rem;
-            border-radius: 25px;
-            position: relative;
-            overflow: hidden;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: var(--transition);
         }
 
-        .nav-menu li a:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: all 0.5s;
-        }
-
-        .nav-menu li a:hover:before {
-            left: 100%;
-        }
-
-        .nav-menu li a:hover {
-            color: #4CAF50;
-            background: rgba(255, 255, 255, 0.1);
+        nav ul li a:hover {
+            background-color: var(--secondary);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hamburger Menu */
         .hamburger {
             display: none;
+            flex-direction: column;
             cursor: pointer;
-            font-size: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: all 0.3s;
         }
 
-        .hamburger:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: rotate(90deg);
+        .hamburger span {
+            height: 3px;
+            width: 25px;
+            background-color: white;
+            margin: 3px 0;
+            transition: var(--transition);
+            border-radius: 2px;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85) 0%, rgba(40, 80, 140, 0.85) 100%), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background: linear-gradient(rgba(26, 82, 118, 0.8), rgba(26, 82, 118, 0.9)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             color: white;
-            padding: 6rem 0;
+            padding: 5rem 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            animation: fadeIn 1s ease-out;
         }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            animation: slideUp 1s ease-out;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            background: linear-gradient(45deg, #fff, #e6f7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: slideInFromTop 1s ease-out;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin: 0 auto 2.5rem;
-            animation: slideUp 1.2s ease-out;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: slideInFromBottom 1s ease-out;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #4CAF50, #66BB6A);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.4s ease;
-            animation: pulse 2s infinite;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: all 0.6s;
-        }
-
-        .cta-button:hover:before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
-        }
-
-        /* Content Section */
-        .content-section {
-            padding: 5rem 0;
-            background: white;
-            position: relative;
+        /* Content Sections */
+        section {
+            padding: 4rem 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 4rem;
-            color: #1e3c72;
+            margin-bottom: 3rem;
+            color: var(--primary);
             position: relative;
         }
 
         .section-title:after {
             content: '';
-            display: block;
-            width: 100px;
+            position: absolute;
+            width: 80px;
             height: 4px;
-            background: linear-gradient(45deg, #4CAF50, #66BB6A);
-            margin: 15px auto;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 2px;
-            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
         }
 
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+        .content-block {
+            margin-bottom: 2.5rem;
         }
 
-        .content-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            position: relative;
-            z-index: 1;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .content-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-img {
-            height: 220px;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 2rem;
-        }
-
-        .card-content h3 {
-            color: #1e3c72;
+        .content-block h3 {
+            color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
 
-        .card-content p {
-            color: #666;
-            margin-bottom: 1.8rem;
-            line-height: 1.7;
+        .content-block p {
+            margin-bottom: 1rem;
         }
 
-        .card-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #1e3c72, #2a5298);
-            color: white;
-            padding: 0.7rem 1.8rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(30, 60, 114, 0.3);
+        .content-block ul, .content-block ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .card-button:hover {
-            background: linear-gradient(45deg, #2a5298, #3a62a8);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(30, 60, 114, 0.4);
+        .content-block li {
+            margin-bottom: 0.5rem;
         }
 
-        /* Steps Section */
-        .steps-section {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f0f4f8 0%, #e1e8f0 100%);
-            position: relative;
+        .highlight {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary);
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .warning {
+            background-color: #fdf2e9;
+            padding: 1.5rem;
+            border-left: 4px solid var(--warning);
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
         }
 
         .steps-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .step {
-            display: flex;
-            margin-bottom: 3rem;
-            animation: fadeIn 1s ease-out;
-            background: white;
-            border-radius: 15px;
+        .step-card {
+            background-color: white;
+            border-radius: 8px;
             padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border-left: 5px solid #4CAF50;
-        }
-
-        .step:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        }
-
-        .step-number {
-            flex: 0 0 70px;
-            height: 70px;
-            background: linear-gradient(45deg, #4CAF50, #66BB6A);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-right: 2rem;
-            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
-        }
-
-        .step-content {
-            flex: 1;
-        }
-
-        .step-content h3 {
-            color: #1e3c72;
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-        }
-
-        /* Guide Section */
-        .guide-section {
-            padding: 5rem 0;
-            background: white;
-            position: relative;
-        }
-
-        .guide-container {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .guide-image {
-            flex: 1;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .guide-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .guide-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .guide-content {
-            flex: 1;
-        }
-
-        .guide-content h2 {
-            color: #1e3c72;
-            margin-bottom: 1.5rem;
-            font-size: 2.2rem;
-        }
-
-        .guide-content p {
-            color: #666;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        /* Update Methods Section */
-        .methods-section {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .methods-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .methods-content h2 {
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
-        }
-
-        .methods-content p {
-            margin-bottom: 2.5rem;
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .methods-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #4CAF50, #66BB6A);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .methods-button:before {
-            content: '';
+        .step-number {
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: all 0.6s;
+            left: 0;
+            background-color: var(--secondary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-bottom-right-radius: 8px;
         }
 
-        .methods-button:hover:before {
-            left: 100%;
+        .step-card h3 {
+            margin: 1rem 0;
+            color: var(--primary);
         }
 
-        .methods-button:hover {
+        .step-card p {
+            color: #666;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .image-container img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
         }
 
         /* FAQ Section */
-        .faq-section {
-            padding: 5rem 0;
-            background: white;
-            position: relative;
-        }
-
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         .faq-item {
             margin-bottom: 1.5rem;
-            border-radius: 15px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            box-shadow: var(--shadow);
         }
 
         .faq-question {
-            background: linear-gradient(45deg, #1e3c72, #2a5298);
-            color: white;
+            background-color: white;
             padding: 1.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            transition: var(--transition);
         }
 
         .faq-question:hover {
-            background: linear-gradient(45deg, #2a5298, #3a62a8);
+            background-color: var(--light);
         }
 
         .faq-answer {
-            padding: 1.5rem;
-            background: #f8f9fa;
-            display: none;
-            animation: fadeIn 0.5s ease-out;
-            border-left: 5px solid #4CAF50;
+            background-color: white;
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
         }
 
-        .faq-item.active .faq-answer {
-            display: block;
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .cta h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background-color: var(--primary);
             color: white;
-            padding: 4rem 0 1rem;
-            position: relative;
-            overflow: hidden;
+            padding: 3rem 0 1rem;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
         .footer-column h3 {
             margin-bottom: 1.5rem;
             position: relative;
-            padding-bottom: 0.8rem;
-            color: #4CAF50;
+            padding-bottom: 10px;
         }
 
         .footer-column h3:after {
             content: '';
             position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
+            width: 40px;
             height: 3px;
-            background: linear-gradient(45deg, #4CAF50, #66BB6A);
-            border-radius: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
         }
 
-        .footer-links {
+        .footer-column ul {
             list-style: none;
         }
 
-        .footer-links li {
+        .footer-column ul li {
             margin-bottom: 0.8rem;
         }
 
-        .footer-links a {
-            color: #bdc3c7;
+        .footer-column ul li a {
+            color: #ddd;
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
+            transition: var(--transition);
         }
 
-        .footer-links a:hover {
-            color: #4CAF50;
-            transform: translateX(5px);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: #4CAF50;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2.5rem;
+            padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #bdc3c7;
-            position: relative;
-            z-index: 1;
         }
 
         /* Animations */
@@ -610,257 +433,390 @@
             to { opacity: 1; }
         }
 
-        @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes slideInFromTop {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        @keyframes slideInFromBottom {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        /* Responsive Styles */
+        /* Responsive Design */
         @media (max-width: 768px) {
             .hamburger {
-                display: block;
+                display: flex;
             }
 
-            .nav-menu {
+            nav ul {
                 position: fixed;
                 top: 70px;
-                right: -100%;
-                flex-direction: column;
-                background: rgba(30, 60, 114, 0.95);
-                backdrop-filter: blur(10px);
-                width: 80%;
+                left: -100%;
+                width: 100%;
                 height: calc(100vh - 70px);
-                transition: 0.5s;
-                padding: 2rem;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                background-color: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: var(--transition);
+                z-index: 999;
             }
 
-            .nav-menu.active {
-                right: 0;
+            nav ul.active {
+                left: 0;
             }
 
-            .hero h2 {
-                font-size: 2.2rem;
+            nav ul li {
+                margin: 1rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
             }
 
             .hero p {
-                font-size: 1.1rem;
-            }
-
-            .step {
-                flex-direction: column;
-            }
-
-            .step-number {
-                margin-right: 0;
-                margin-bottom: 1.5rem;
-            }
-
-            .guide-container {
-                flex-direction: column;
+                font-size: 1rem;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h1>Xgody GPS</h1>
-                </div>
-                <div class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="https://navisolve.com/" target="_blank">Update</a></li>
-                    <li><a href="https://navisolve.com/" target="_blank">Support</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-map-marked-alt"></i>
+                Xgody<span>GPS</span>
             </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="https://navisolve.com/">Update</a></li>
+                    <li><a href="https://navisolve.com/">Support</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="https://navisolve.com/" class="btn-primary">Update Now</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h2>How to Update Xgody GPS Map</h2>
-                <p>Keep your Xgody navigation system up-to-date with the latest maps and features. Follow our simple guide to ensure you always have the most accurate directions for your journeys.</p>
-                <a href="https://navisolve.com/" class="cta-button" target="_blank">Update Now</a>
-            </div>
+            <h1>How to Update Your Xgody GPS Maps</h1>
+            <p>Keep your navigation system current with our comprehensive guide for Xgody GPS updates. Ensure accurate directions and discover new routes with the latest maps.</p>
+            <a href="https://navisolve.com/" class="btn-primary">Update Your GPS Now</a>
         </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="content-section">
+    <!-- Introduction Section -->
+    <section>
         <div class="container">
-            <h2 class="section-title">Why Update Your Xgody GPS?</h2>
-            <div class="content-grid">
-                <div class="content-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1593941707882-a5bba5331b2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Car with GPS">
-                    </div>
-                    <div class="card-content">
-                        <h3>Accurate Directions</h3>
-                        <p>New roads, changed traffic patterns, and updated points of interest ensure you always have the most efficient route. Xgody GPS devices rely on current map data to provide reliable navigation, and regular updates are essential for avoiding outdated routes that could lead to unnecessary detours or delays. As cities expand and infrastructure develops, your GPS needs to reflect these changes to maintain its usefulness as a navigation tool.</p>
-                        <a href="https://navisolve.com/" class="card-button" target="_blank">Learn More</a>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="GPS Device">
-                    </div>
-                    <div class="card-content">
-                        <h3>Save Time & Fuel</h3>
-                        <p>Optimized routes help reduce travel time and fuel consumption, saving you money on every journey. Updated Xgody maps include the most current traffic patterns, road closures, and construction zones, allowing for more efficient routing. By avoiding traffic congestion and taking the most direct paths, you'll not only save time but also reduce wear and tear on your vehicle while lowering your environmental impact through decreased fuel consumption.</p>
-                        <a href="https://navisolve.com/" class="card-button" target="_blank">Learn More</a>
-                    </div>
-                </div>
-                <div class="content-card">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25856cd25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="GPS Navigation">
-                    </div>
-                    <div class="card-content">
-                        <h3>Enhanced Safety</h3>
-                        <p>Updated maps include important safety features, speed limit information, and traffic regulation updates for a safer drive. Xgody GPS devices with current maps can alert you to changed speed zones, new traffic circles, school zones, and other potential hazards. This information helps you drive more defensively and comply with local traffic laws, reducing the risk of accidents and traffic violations during your travels.</p>
-                        <a href="https://navisolve.com/" class="card-button" target="_blank">Learn More</a>
-                    </div>
+            <h2 class="section-title">Complete Guide to Xgody GPS Updates</h2>
+            <div class="content-block">
+                <p>In today's rapidly changing world, road networks are constantly evolving. New highways are built, traffic patterns change, and points of interest come and go. For GPS navigation devices like your Xgody unit, these changes mean that without regular updates, your device can quickly become outdated, leading to inefficient routing, missed turns, and frustration during your travels.</p>
+                
+                <p>This comprehensive guide will walk you through everything you need to know about updating your Xgody GPS device. We'll cover the importance of regular updates, provide detailed step-by-step instructions for different Xgody models, troubleshoot common issues, and explain the benefits of keeping your navigation system current. Whether you're a daily commuter, occasional road tripper, or professional driver, this information will help you get the most from your Xgody GPS investment.</p>
+                
+                <div class="highlight">
+                    <p><strong>Note:</strong> The update process may vary slightly depending on your specific Xgody GPS model. Always refer to your device's manual for model-specific instructions, but this guide provides a comprehensive overview that applies to most Xgody navigation devices.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Steps Section -->
-    <section class="steps-section" id="update-steps">
+    <section class="steps">
         <div class="container">
-            <h2 class="section-title">How to Update Your Xgody GPS</h2>
+            <h2 class="section-title">Step-by-Step Update Guide</h2>
+            
+            <div class="content-block">
+                <h3>Preparation: Before You Begin</h3>
+                <p>Proper preparation is crucial for a successful GPS update. Rushing through this process or skipping important steps can lead to incomplete updates or even device malfunctions. Before starting the update process, ensure you have the following:</p>
+                
+                <ul>
+                    <li>Your Xgody GPS device</li>
+                    <li>The original USB cable that came with your device</li>
+                    <li>A computer with reliable internet connection</li>
+                    <li>At least 2GB of free space on your device (more for comprehensive map updates)</li>
+                    <li>Your device fully charged or connected to power during the update</li>
+                    <li>Approximately 30-60 minutes of uninterrupted time</li>
+                </ul>
+                
+                <div class="warning">
+                    <p><strong>Important:</strong> Never disconnect your GPS during an update, as this can corrupt the system software and render your device unusable. Ensure you have sufficient battery life or keep your device plugged into a power source throughout the process.</p>
+                </div>
+            </div>
+            
             <div class="steps-container">
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Check Your Current Map Version</h3>
-                        <p>Begin by identifying your Xgody GPS model and checking the current map version. This information is typically found in the "Settings" or "System Information" section of your device. Make note of your current map version and compare it with the latest available version on the Xgody website. Different Xgody models may have slightly different menu structures, so consult your device manual if you have difficulty locating this information. Knowing your current version helps determine if an update is necessary and ensures you download the correct files for your specific device.</p>
-                    </div>
+                    <h3>Identify Your Device Model</h3>
+                    <p>Locate your Xgody GPS model number, typically found on the back of the device, in the settings menu under "About Device," or in the original packaging. This ensures you download the correct update files specific to your hardware.</p>
                 </div>
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Download the Latest Map Update</h3>
-                        <p>Visit the official Xgody website or authorized distributor to download the latest map update for your specific GPS model. Ensure you select the correct update file that matches your device model and region. Map updates are typically large files, so ensure you have a stable internet connection and sufficient storage space on your computer. Some Xgody devices may require you to create an account or register your device before accessing updates. Always download from official sources to avoid malware or corrupted files that could damage your GPS device.</p>
-                    </div>
+                    <h3>Check Current Software Version</h3>
+                    <p>Navigate to Settings > System > About on your Xgody device to check your current software and map versions. This helps determine if an update is needed and allows you to verify the update was successful afterward.</p>
                 </div>
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Prepare Your SD Card or Connect Your Device</h3>
-                        <p>Most Xgody GPS devices use SD cards for map storage and updates. Remove the SD card from your GPS device and insert it into your computer using an SD card reader. If your Xgody model connects directly via USB, use the provided cable to connect your device to your computer. Ensure your GPS device is sufficiently charged or connected to power during the update process to prevent interruption. Back up any existing data on your SD card before proceeding with the update, as the process may overwrite existing files.</p>
-                    </div>
+                    <h3>Connect to Computer</h3>
+                    <p>Use the provided USB cable to connect your Xgody GPS to your computer. Ensure the connection is secure and your device is properly recognized. Some models may require you to enable "File Transfer" mode.</p>
                 </div>
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Transfer Update Files to Your Device</h3>
-                        <p>Copy the downloaded map update files to your Xgody GPS device or SD card. Follow the specific instructions provided with your download, as file placement may vary between different Xgody models. Some updates require you to extract compressed files before transferring, while others may need to be placed in specific folders. Ensure the transfer completes fully before disconnecting your device or removing the SD card. The transfer time will depend on the update size and your computer's speed, so be patient and avoid interrupting the process.</p>
-                    </div>
+                    <h3>Download Update Tool</h3>
+                    <p>Visit the official Xgody GPS update portal and download the latest update tool. This specialized software will guide you through the update process and ensure compatibility with your specific device model.</p>
                 </div>
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Verify the Update and Test Your GPS</h3>
-                        <p>After transferring the update files, safely eject your device or SD card from your computer and reinsert it into your Xgody GPS. Power on your device and check the map version in the system information to confirm the update was successful. Take your GPS for a test drive to ensure all navigation functions work correctly. Test address search, route calculation, and voice guidance features. If you encounter any issues, consult the troubleshooting section of your manual or contact <a href="https://navisolve.com/">Xgody GPS Map Update</a> for assistance.</p>
+                    <h3>Backup Existing Data</h3>
+                    <p>Before proceeding, back up your current maps, saved locations, and preferences. This precaution ensures you don't lose important destinations or custom settings during the update process.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3>Install New Maps</h3>
+                    <p>Follow the on-screen instructions to install the latest maps. This process may take several minutes depending on your internet speed and the size of the update. Be patient and do not interrupt the process.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">7</div>
+                    <h3>Verify Installation</h3>
+                    <p>Once complete, safely disconnect your device and verify that the new maps are working correctly by testing navigation to familiar locations and checking the map version in settings.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">8</div>
+                    <h3>Post-Update Configuration</h3>
+                    <p>After updating, you may need to reconfigure certain settings. Check your preferences, restore any backed-up favorites, and familiarize yourself with new features included in the update.</p>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Detailed Update Instructions for Different Connection Methods</h3>
+                
+                <h4>Updating via USB Connection (Most Common Method)</h4>
+                <p>For most Xgody GPS models, the primary update method involves connecting your device to a computer via USB cable. This method provides a stable connection and allows for larger file transfers. Here's a more detailed breakdown:</p>
+                
+                <ol>
+                    <li>Ensure your computer is connected to a reliable internet source with sufficient bandwidth for downloading update files, which can range from 500MB to 2GB depending on the region and update type.</li>
+                    <li>Install the Xgody GPS Update Tool on your computer. This specialized software is designed to communicate with your GPS device and manage the update process efficiently.</li>
+                    <li>Connect your Xgody GPS to your computer using the provided USB cable. Use the original cable whenever possible, as third-party cables may not provide adequate data transfer capabilities.</li>
+                    <li>Launch the Xgody GPS Update Tool and follow the on-screen instructions. The software will automatically detect your device model and check for available updates.</li>
+                    <li>Select the maps and software components you wish to update. For optimal performance, we recommend updating both maps and system software when available.</li>
+                    <li>Initiate the download and installation process. The time required will vary based on your internet speed and the size of the updates.</li>
+                    <li>Once the update is complete, safely eject your device from the computer using the proper software ejection method to avoid data corruption.</li>
+                    <li>Restart your Xgody GPS device to ensure all updates are properly integrated into the system.</li>
+                </ol>
+                
+                <h4>Updating via SD Card (Alternative Method)</h4>
+                <p>Some Xgody GPS models support updates via SD card, which can be useful if you have limited computer access or prefer this method:</p>
+                
+                <ol>
+                    <li>Insert a compatible SD card into your computer (ensure it has sufficient capacity for the update files).</li>
+                    <li>Download the update files directly to the SD card using the Xgody GPS Update Tool.</li>
+                    <li>Safely eject the SD card from your computer.</li>
+                    <li>With your Xgody GPS powered off, insert the SD card into the device.</li>
+                    <li>Power on the device - it should automatically detect the update files and begin the installation process.</li>
+                    <li>Follow any on-screen prompts to complete the update.</li>
+                    <li>Once finished, remove the SD card and restart your device.</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Xgody GPS in Action</h2>
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Car GPS Navigation">
+            </div>
+            
+            <div class="content-block">
+                <h3>Understanding Different Xgody GPS Models</h3>
+                <p>Xgody offers a range of GPS navigation devices, each with slightly different update procedures. The most common series include the Xgody 7-inch Touchscreen GPS Navigator, the <a href="https://navisolve.com/">Xgody GPS Map Update</a> with specialized routing for commercial vehicles, and the compact Xgody Portable GPS for occasional users.</p>
+                
+                <p>While the fundamental update process remains similar across models, there are important distinctions to note. For instance, truck-specific models include updates for truck-related restrictions, weight limits, and commercial vehicle routes that aren't included in standard passenger vehicle updates. Similarly, premium models may offer more frequent updates or additional features like real-time traffic information that require specific update procedures.</p>
+                
+                <p>If you're unsure about your specific model, check the device settings or physical labeling. The model number typically begins with "XG" followed by a series of numbers. This information is crucial for ensuring you download the correct update files and follow the appropriate procedure for your device.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Update Your Xgody GPS?</h2>
+            
+            <div class="content-block">
+                <p>Regularly updating your Xgody GPS isn't just about having the latest software - it's about ensuring accuracy, safety, and efficiency in your navigation. Here's a detailed look at the benefits of keeping your device current:</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
                     </div>
+                    <h3>New Roads & Routes</h3>
+                    <p>Access recently constructed roads, highways, and updated routes for more efficient navigation. Map updates include thousands of new road miles added each year, ensuring you're always on the most direct path.</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Updated Points of Interest</h3>
+                    <p>Discover new restaurants, gas stations, hotels, and other important locations with our updated database. Points of interest change frequently, and current data ensures you can find what you need when traveling.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Improved Performance</h3>
+                    <p>Experience faster route calculations and smoother navigation with optimized software. Updates often include performance enhancements that make your device respond more quickly to routing requests.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enhanced Safety</h3>
+                    <p>Stay informed about traffic regulations, speed limits, and safety camera locations. Updated maps include changes to traffic laws and new safety features that help you drive more safely.</p>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <h3>Additional Benefits of Regular Updates</h3>
+                
+                <p>Beyond the obvious navigation improvements, regular GPS updates offer several less apparent but equally important benefits:</p>
+                
+                <ul>
+                    <li><strong>Fuel Efficiency:</strong> Updated routes often include more efficient paths that can reduce fuel consumption by avoiding unnecessary detours or traffic congestion.</li>
+                    <li><strong>Time Savings:</strong> With current map data, you'll spend less time navigating unfamiliar areas or correcting wrong turns, potentially saving hours over the course of a year.</li>
+                    <li><strong>Reduced Stress:</strong> Confidence in your navigation system reduces driving anxiety, especially in unfamiliar territories or complex road systems.</li>
+                    <li><strong>Vehicle Maintenance:</strong> Some Xgody models can track maintenance schedules and provide alerts for service intervals based on your driving patterns.</li>
+                    <li><strong>Resale Value:</strong> A well-maintained, updated GPS system can increase the resale value of your vehicle or the device itself if you choose to upgrade.</li>
+                </ul>
+                
+                <p>Considering these benefits, the time investment required for regular updates offers significant returns in convenience, safety, and overall driving experience.</p>
             </div>
         </div>
     </section>
 
-    <!-- Guide Section -->
-    <section class="guide-section">
+    <!-- Troubleshooting Section -->
+    <section>
         <div class="container">
-            <div class="guide-container">
-                <div class="guide-image">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Girl with GPS Guide">
+            <h2 class="section-title">Troubleshooting Common Update Issues</h2>
+            
+            <div class="content-block">
+                <p>While the Xgody GPS update process is generally straightforward, you may occasionally encounter issues. Here are solutions to common problems:</p>
+                
+                <h3>Device Not Recognized by Computer</h3>
+                <p>If your computer doesn't recognize your Xgody GPS when connected via USB:</p>
+                <ul>
+                    <li>Try a different USB port, preferably one directly on your computer rather than a hub</li>
+                    <li>Test with a different USB cable, as cables can fail over time</li>
+                    <li>Check if your device needs to be in a specific mode (like "File Transfer") for connection</li>
+                    <li>Restart both your computer and GPS device</li>
+                    <li>Update USB drivers on your computer</li>
+                </ul>
+                
+                <h3>Update Process Freezes or Fails</h3>
+                <p>If the update process stalls or fails to complete:</p>
+                <ul>
+                    <li>Ensure you have a stable internet connection throughout the process</li>
+                    <li>Check that your device has sufficient battery life (keep it plugged in during updates)</li>
+                    <li>Close other applications on your computer to free up system resources</li>
+                    <li>Try the update at a different time when internet traffic may be lighter</li>
+                    <li>If problems persist, contact Xgody support for assistance</li>
+                </ul>
+                
+                <h3>Maps Not Displaying Correctly After Update</h3>
+                <p>If your maps appear corrupted or don't display properly after an update:</p>
+                <ul>
+                    <li>Perform a hard reset on your device (refer to your model's manual for instructions)</li>
+                    <li>Check that you installed the correct maps for your region</li>
+                    <li>Verify that the update completed fully - you may need to restart the process</li>
+                    <li>Ensure your device has adequate storage space for the new maps</li>
+                </ul>
+                
+                <div class="highlight">
+                    <p><strong>Pro Tip:</strong> Before contacting support, note any error codes or messages that appear during failed updates. This information can help support personnel diagnose and resolve your issue more quickly.</p>
                 </div>
-                <div class="guide-content">
-                    <h2>Expert GPS Update Assistance</h2>
-                    <p>Our team of navigation experts is ready to help you update your Xgody GPS with ease. Whether you're a first-time user or need assistance with advanced features, we provide step-by-step guidance to ensure your maps are always current.</p>
-                    <p>With our comprehensive support, you'll never have to worry about outdated maps or navigation errors again. We make the update process simple and straightforward, providing detailed instructions tailored to your specific Xgody model. Our experts stay current with the latest update procedures and can help troubleshoot any issues you might encounter during the process.</p>
-                    <a href="https://navisolve.com/" class="methods-button" target="_blank">Get Expert Help</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Update Methods Section -->
-    <section class="methods-section">
-        <div class="container">
-            <div class="methods-content">
-                <h2>Multiple Update Methods Available</h2>
-                <p>Xgody offers several ways to update your GPS maps, including SD card updates, direct USB connections, and for some models, wireless updates. Choose the method that works best for your specific Xgody device and technical comfort level. Our experts can guide you through each method to ensure a successful update.</p>
-                <a href="https://navisolve.com/" class="methods-button" target="_blank">Explore Update Methods</a>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq-section">
+    <section class="features">
         <div class="container">
             <h2 class="section-title">Frequently Asked Questions</h2>
+            
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How often should I update my Xgody GPS maps?</span>
+                        <span>How often should I update my Xgody GPS?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>For optimal performance, we recommend updating your Xgody GPS maps at least once per year. However, if you frequently travel to unfamiliar areas or live in a region experiencing rapid development, more frequent updates may be beneficial. Xgody typically releases map updates periodically, and staying current ensures you have access to new roads, changed traffic patterns, and updated points of interest. Regular updates are particularly important for commercial drivers or those who rely heavily on their GPS for navigation.</p>
+                        <p>For optimal performance, we recommend updating your Xgody GPS at least once every six months. However, if you frequently travel to new areas or rely heavily on your GPS for daily navigation, quarterly updates are advisable. Major road changes typically occur 2-3 times per year in most regions, so biannual updates will keep you current with most significant changes.</p>
                     </div>
                 </div>
+                
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Are Xgody GPS map updates free?</span>
+                        <span>Are GPS updates free for Xgody devices?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Xgody typically provides free map updates for a limited period after purchase, often one year. After this initial period, map updates may require purchase. Check your device documentation or the Xgody website for specific information about your model's update policy. Some third-party services may offer free updates, but these can be unreliable or contain malware, so we recommend using official Xgody sources for updates to ensure compatibility and device security.</p>
+                        <p>Xgody typically provides free map updates for the first year after purchase. After this period, update subscriptions may be required for continued access to the latest maps. Some premium features, such as real-time traffic information, may involve additional fees regardless of your device age. Check your specific model's terms or contact Xgody support for detailed information about your update eligibility.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What should I do if my update fails?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>If your Xgody GPS update fails, first ensure you have followed all instructions correctly and that you're using the correct update files for your specific model. Try using a different SD card or USB cable if applicable. Ensure your device has sufficient battery or is connected to power during the update process. If problems persist, try performing a hard reset on your device (consult your manual for instructions) and attempt the update again. For continued issues, contact Xgody customer support with details about your device model and the specific error you're experiencing.</p>
-                    </div>
-                </div>
+                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>Can I update my Xgody GPS without a computer?</span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Most Xgody GPS models require a computer to download and transfer map updates. However, some newer Xgody models with Wi-Fi capability may support wireless updates directly to the device. Check your device specifications to see if this feature is available. For models without Wi-Fi, you'll need access to a computer with an internet connection and an SD card reader or USB port to complete the update process. Public libraries or friend's computers can be alternatives if you don't have personal computer access.</p>
+                        <p>Most Xgody GPS models require a computer connection for updates. However, some newer models may support Wi-Fi updates that allow you to download maps directly to the device without a computer. Check your device specifications to see if this feature is available. For models without Wi-Fi capability, the computer-based update process remains the standard method.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What should I do if my device becomes unresponsive during an update?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>If your device becomes unresponsive during an update, first wait at least 10 minutes as some processes may appear frozen but are actually still running. If there's no change, try performing a soft reset (usually by pressing and holding the power button for 10-15 seconds). If the device remains unresponsive, you may need to contact Xgody support for recovery options. Avoid disconnecting the device during an update whenever possible, as this can cause software corruption.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How can I tell if my update was successful?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>After completing an update, navigate to Settings > System > About on your Xgody device to check the map version and date. Compare this information with the latest version available on the Xgody website. Additionally, test the navigation by plotting routes to familiar destinations to ensure the maps are displaying correctly and routing properly. If you notice any discrepancies or issues, you may need to repeat the update process.</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Update Your Xgody GPS?</h2>
+            <p>Don't navigate with outdated maps. Update your Xgody GPS today for the most accurate and reliable navigation experience. Our easy-to-use update process ensures you'll have the latest roads, points of interest, and navigation features at your fingertips.</p>
+            <a href="https://navisolve.com/" class="btn-primary">Update Now</a>
         </div>
     </section>
 
@@ -870,3 +826,45 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Xgody GPS</h3>
+                    <p>Your trusted partner for reliable navigation solutions. We provide regular updates to keep your journeys smooth and efficient.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="https://navisolve.com/">Update</a></li>
+                        <li><a href="https://navisolve.com/">Support</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> support@xgodygps.com</li>
+                        <li><i class="fas fa-phone"></i> 1-800-XGODY-GPS</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Navigation Solutions Inc.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Xgody GPS Updates. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle
